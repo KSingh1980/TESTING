@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component , OnInit, Inject, Injectable } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+ domain="";
+  constructor(@Inject(DOCUMENT) private document: any) { }
+
+    ngOnInit() {
+        this.domain = this.document.location.hostname;
+        console.log(this.domain);
+    }
 }
