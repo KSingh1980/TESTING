@@ -8,7 +8,11 @@
     "start": "ng serve",
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "create-db": "./node_modules/.bin/ts-node ./createdb.ts",
+    "upload": "./node_modules/.bin/ts-node ./trygcloud.ts",
+    "readFiles": "./node_modules/.bin/ts-node ./readfiles.ts",
+    "batch-server": "./node_modules/.bin/ts-node ./batch-server.ts"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +24,15 @@
     "@angular/platform-browser": "^2.3.1",
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
+    "@google-cloud/storage": "^1.1.1",
+    "angularfire2": "^4.0.0-rc.0",
     "core-js": "^2.4.1",
+    "firebase": "^3.7.4",
+    "firebase-admin": "^5.0.0",
+    "firebase-queue": "^1.5.0",
+    "gcloud": "^0.37.2",
+    "google-cloud": "^0.54.0",
+    "googleapis": "^19.0.0",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.7.2"
@@ -39,7 +51,8 @@
     "karma-jasmine": "^1.0.2",
     "karma-remap-istanbul": "^0.2.1",
     "protractor": "~4.0.13",
-    "ts-node": "1.2.1",
+    "tnode": "^0.1.1",
+    "ts-node": "^1.2.1",
     "tslint": "^4.3.0",
     "typescript": "~2.0.3"
   }
